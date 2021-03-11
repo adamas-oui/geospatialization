@@ -256,7 +256,7 @@ peripleo_results = []
 for i in proper_nouns:
     print(f'matching {i} against peripleo (Pleiades) gazetteer...')
     # search has default time bounds and default dataset is Pleiades. look at the code for details
-    peripleo_results.append({'token': i, 'results': search_peripleo(i, fuzzy=False)})
+    peripleo_results.append({'token': i, 'results': search_peripleo(i, fuzzy=True)})
     
 # print(peripleo_results)
 peripleo_places = [{'token': i['token'], 'place': i['results']['items'][0]} for i in peripleo_results if len(i['results']['items']) > 0]
